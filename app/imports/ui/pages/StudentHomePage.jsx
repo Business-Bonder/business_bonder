@@ -6,6 +6,7 @@ import { Contacts } from '../../api/contact/Contacts';
 import LoadingSpinner from '../components/LoadingSpinner';
 import Contact from '../components/Contact';
 import { Notes } from '../../api/note/Notes';
+import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 
 /* Renders a table containing all of the Contact documents. Use <ContactItem> to render each row. */
@@ -42,6 +43,12 @@ const StudentHomePage = () => {
                 <Contact contact={contact} notes={notes.filter(note => (note.contactId === contact._id))} />
               </Col>
             ))}
+          </Row>
+          <Row className="py-3 px-3"> {/* Add padding to top and bottom */}
+            <Link to={`/edit/${contacts[0]._id}`} className="btn btn-primary">Edit Profile</Link>
+          </Row>
+          <Row xs={8} md={8} lg={8} className="justify-content-center">
+
           </Row>
         </Col>
       </Row>

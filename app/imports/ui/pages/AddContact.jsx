@@ -14,6 +14,8 @@ const formSchema = new SimpleSchema({
   address: String,
   image: String,
   description: String,
+  interests: String,
+  resume: String,
 });
 
 const bridge = new SimpleSchema2Bridge(formSchema);
@@ -23,10 +25,10 @@ const AddContact = () => {
 
   // On submit, insert the data.
   const submit = (contact, formRef) => {
-    const { firstName, lastName, address, image, description } = contact;
+    const { firstName, lastName, address, image, description, interests, resume } = contact;
     const owner = Meteor.user().username;
     Contacts.collection.insert(
-      { firstName, lastName, address, image, description, owner },
+      { firstName, lastName, address, image, description, interests, resume, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -57,6 +59,8 @@ const AddContact = () => {
                   <Col><TextField name="image" /></Col>
                 </Row>
                 <LongTextField name="description" />
+                <LongTextField name="interests" />
+                <LongTextField name="resume" />
                 <SubmitField value="Submit" />
                 <ErrorsField />
               </Card.Body>
