@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Contacts } from '../../api/contact/Contacts';
 import { Notes } from '../../api/note/Notes';
+import { Students } from '../../api/student/Students';
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise, publish nothing.
 
@@ -42,4 +43,9 @@ Meteor.publish(Notes.adminPublicationName, function () {
     return Notes.collection.find();
   }
   return this.ready();
+});
+
+// Publish Students list using
+Meteor.publish(Students.userPublicationName, function () {
+  return Students.collection.find();
 });
