@@ -31,7 +31,7 @@ const NavBar = () => {
               </Nav.Link>
             </Col>
             <Col style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <Nav.Link id="add-contact-nav" as={NavLink} to="/home" key="home">
+              <Nav.Link id="add-contact-nav" as={NavLink} to="/studenthome" key="home">
                 <div style={{ marginTop: '0px', marginLeft: '0px' }}><AiFillHome size={25} /></div>
                 <div style={{ marginTop: '-5px', marginLeft: '-7px', fontSize: '15px' }}>Home</div>
               </Nav.Link>

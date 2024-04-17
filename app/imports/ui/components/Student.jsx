@@ -14,7 +14,14 @@ const Student = ({ student, notes }) => (
       <Card.Subtitle>{student.address}</Card.Subtitle>
     </Card.Header>
     <Card.Body>
-      <Card.Text>{student.description}</Card.Text>
+      <ul className="list-group list-group-flush">
+        <li className="list-group-item">{student.description}</li>
+        <li className="list-group-item">{student.interests}</li>
+        <li className="list-group-item">
+          <a href={student.resume} className="btn btn-primary">My Resume</a>
+        </li>
+      </ul>
+
       <ListGroup variant="flush">
         {notes.map((note) => <Note key={note._id} note={note} />)}
       </ListGroup>

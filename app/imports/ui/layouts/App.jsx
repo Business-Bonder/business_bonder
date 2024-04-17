@@ -13,10 +13,10 @@ import NavBar from '../components/NavBar';
 import SignIn from '../pages/SignIn';
 import NotAuthorized from '../pages/NotAuthorized';
 import LoadingSpinner from '../components/LoadingSpinner';
-import ListContacts from '../pages/ListContacts';
+import StudentHomePage from '../pages/StudentHomePage';
 import ListContactsAdmin from '../pages/ListContactsAdmin';
 import AddContact from '../pages/AddContact';
-import EditContact from '../pages/EditContact';
+import EditStudent from '../pages/EditStudent';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -36,9 +36,9 @@ const App = () => {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signout" element={<SignOut />} />
           <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
-          <Route path="/list" element={<ProtectedRoute><ListContacts /></ProtectedRoute>} />
+          <Route path="/studenthome" element={<ProtectedRoute><StudentHomePage /></ProtectedRoute>} />
           <Route path="/add" element={<ProtectedRoute><AddContact /></ProtectedRoute>} />
-          <Route path="/edit/:_id" element={<ProtectedRoute><EditContact /></ProtectedRoute>} />
+          <Route path="/edit/:_id" element={<ProtectedRoute><EditStudent /></ProtectedRoute>} />
           <Route path="/admin" element={<AdminProtectedRoute ready={ready}><ListContactsAdmin /></AdminProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
           <Route path="*" element={<NotFound />} />
