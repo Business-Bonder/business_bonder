@@ -18,7 +18,7 @@ const StudentHomePage = () => {
     const subscription2 = Meteor.subscribe(Notes.userPublicationName);
     // Determine if the subscription is ready
     const rdy = subscription.ready() && subscription2.ready();
-    // Get the Contacts documents
+    // Get the Students documents
     const studentItems = Students.collection.find({}).fetch();
     const noteItems = Notes.collection.find({}).fetch();
     return {
@@ -38,7 +38,6 @@ const StudentHomePage = () => {
           <Row xs={1} md={2} lg={3} className="g-4">
             {students.map((student) => (<Col key={student.id}><Student student={student} notes={notes.filter(note => (note.contactId === student._id))} /></Col>))}
           </Row>
-
         </Col>
       </Row>
     </Container>
