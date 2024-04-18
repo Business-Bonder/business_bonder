@@ -6,7 +6,7 @@ import Note from './Note';
 import AddNote from './AddNote';
 
 /** Renders a single row in the List Contact table. See pages/ListContacts.jsx. */
-const Student = ({ student, notes }) => (
+const Company = ({ student, notes }) => (
   <Card className="h-100">
     <Card.Header>
       <Image src={student.image} width={75} />
@@ -25,7 +25,7 @@ const Student = ({ student, notes }) => (
 );
 
 // Require a document to be passed to this component.
-Student.propTypes = {
+Company.propTypes = {
   student: PropTypes.shape({
     firstName: PropTypes.string,
     lastName: PropTypes.string,
@@ -47,4 +47,4 @@ Student.propTypes = {
   })).isRequired,
 };
 
-export default Student;
+export default Company;

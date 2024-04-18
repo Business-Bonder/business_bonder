@@ -2,25 +2,20 @@ import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
 /**
- * The StudentsCollection. It encapsulates state and variable values for Contacts.
+ * The CompaniesCollection. It encapsulates state and variable values for Contacts.
  */
-class StudentsCollection {
+class CompaniesCollection {
   constructor() {
     // The name of this collection.
-    this.name = 'StudentsCollection';
+    this.name = 'CompaniesCollection';
     // Define the Mongo collection.
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
-      firstName: String,
-      lastName: String,
-      address: String,
-      image: String,
-      description: String,
-      interests: String,
-      resume: String,
-      school: String,
-      owner: String,
+      overview: String,
+      location: String,
+      positions: String,
+      //add more
     });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);
@@ -31,7 +26,7 @@ class StudentsCollection {
 }
 
 /**
- * The singleton instance of the StudentsCollection.
- * @type {StudentsCollection}
+ * The singleton instance of the CompaniesCollection.
+ * @type {CompaniesCollection}
  */
-export const Students = new StudentsCollection();
+export const Companies = new CompaniesCollection();

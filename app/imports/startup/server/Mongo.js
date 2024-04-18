@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Contacts } from '../../api/contact/Contacts';
-import { Students } from '../../api/student/Students';
+import { Companies } from '../../api/company/Companies';
 
 /* eslint-disable no-console */
 
@@ -18,10 +18,10 @@ if (Contacts.collection.find().count() === 0) {
 
 const addStudent = (student) => {
   console.log(`  Adding: ${student.lastName} (${student.owner})`);
-  Students.collection.insert(student);
+  Companies.collection.insert(student);
 };
 
-if (Students.collection.find().count() === 0) {
+if (Companies.collection.find().count() === 0) {
   if (Meteor.settings.defaultStudent) {
     console.log('Creating default student.');
     Meteor.settings.defaultStudent.forEach(student => addStudent(student));
