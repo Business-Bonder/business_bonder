@@ -27,3 +27,5 @@ if (Students.collection.find().count() === 0) {
     Meteor.settings.defaultStudent.forEach(student => addStudent(student));
   }
 }
+
+

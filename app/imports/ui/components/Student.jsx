@@ -20,6 +20,7 @@ const Student = ({ student, notes }) => (
         <li className="list-group-item">
           <a href={student.resume} className="btn btn-primary">My Resume</a>
         </li>
+
       </ul>
 
       <ListGroup variant="flush">
@@ -42,6 +43,7 @@ Student.propTypes = {
     interests: PropTypes.string,
     resume: PropTypes.string,
     school: PropTypes.string,
+    skills: PropTypes.arrayOf(PropTypes.string), // Update prop types to include skills
     owner: PropTypes.string,
     _id: PropTypes.string,
   }).isRequired,
