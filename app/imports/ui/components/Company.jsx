@@ -27,7 +27,7 @@ const Company = ({ company, notes }) => (
 
 // Require a document to be passed to this component.
 Company.propTypes = {
-  student: PropTypes.shape({
+  company: PropTypes.shape({
     logo: String,
     name: String,
     location: String,
