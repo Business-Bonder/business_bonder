@@ -6,20 +6,21 @@ import Note from './Note';
 import AddNote from './AddNote';
 
 /** Renders a single row in the List Contact table. See pages/ListContacts.jsx. */
-const Company = ({ student, notes }) => (
+const Company = ({ company, notes }) => (
   <Card className="h-100">
     <Card.Header>
-      <Image src={student.image} width={75} />
-      <Card.Title>{student.firstName} {student.lastName}</Card.Title>
-      <Card.Subtitle>{student.address}</Card.Subtitle>
+      <Image src={company.logo} width={75} />
+      <Card.Title>{company.name}</Card.Title>
+      <Card.Subtitle>{company.location}</Card.Subtitle>
     </Card.Header>
     <Card.Body>
-      <Card.Text>{student.description}</Card.Text>
+      <Card.Text>{company.overview}</Card.Text>
+      <Card.Text>{company.positions}</Card.Text>
       <ListGroup variant="flush">
         {notes.map((note) => <Note key={note._id} note={note} />)}
       </ListGroup>
-      <AddNote owner={student.owner} contactId={student._id} />
-      <Link to={`/edit/${student._id}`}>Edit</Link>
+      <AddNote owner={company.owner} contactId={company._id} />
+      <Link to={`/edit/${company._id}`}>Edit</Link>
     </Card.Body>
   </Card>
 );
@@ -27,16 +28,11 @@ const Company = ({ student, notes }) => (
 // Require a document to be passed to this component.
 Company.propTypes = {
   student: PropTypes.shape({
-    firstName: PropTypes.string,
-    lastName: PropTypes.string,
-    address: PropTypes.string,
-    image: PropTypes.string,
-    description: PropTypes.string,
-    interests: PropTypes.string,
-    resume: PropTypes.string,
-    school: PropTypes.string,
-    owner: PropTypes.string,
-    _id: PropTypes.string,
+    logo: String,
+    name: String,
+    location: String,
+    overview: String,
+    positions: String,
   }).isRequired,
   notes: PropTypes.arrayOf(PropTypes.shape({
     note: PropTypes.string,
