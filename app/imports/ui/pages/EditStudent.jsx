@@ -22,28 +22,22 @@ const bridge = new SimpleSchema2Bridge(Students.schema.extend({
   },
 }));
 
-/* Renders the EditStudent page for editing a single document. */
 const EditStudent = () => {
-  // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
   const { _id } = useParams();
-  // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
   const { doc, ready } = useTracker(() => {
-    // Get access to Student documents.
     const subscription = Meteor.subscribe(Students.userPublicationName);
-    // Determine if the subscription is ready
     const rdy = subscription.ready();
-    // Get the document
     const document = Students.collection.findOne(_id);
+    // Initialize studentSkills state with existing skills from the document
     return {
       doc: document,
       ready: rdy,
     };
   }, [_id]);
 
-  // On successful submit, insert the data.
   const submit = (student) => {
-    const { firstName, lastName, address, image, description, interests, resume, school, skills } = student;
-    Students.collection.update(_id, { $set: { firstName, lastName, address, image, description, interests, resume, school, skills } }, (error) => (error ?
+    const { firstName, lastName, address, image, description, interests, resume, school } = student; // Use updated skills array from state
+    Students.collection.update(_id, { $set: { firstName, lastName, address, image, description, interests, resume, school } }, (error) => (error ?
       swal('Error', error.message, 'error') :
       swal('Success', 'Item updated successfully', 'success')));
   };
@@ -70,24 +64,6 @@ const EditStudent = () => {
                   <Col><TextField name="resume" /></Col>
                   <Col><TextField name="school" /></Col>
                 </Row>
-                <fieldset className="mb-3">
-                  <legend>Skills:</legend>
-                  {skillsArray.map((skill, index) => (
-                    <div key={index} className="form-check">
-                      <input
-                        className="form-check-input"
-                        type="checkbox"
-                        id={`skill_${index}`}
-                        name="skills"
-                        value={skill}
-                        defaultChecked={doc && doc.skills && doc.skills.includes(skill)}
-                      />
-                      <label className="form-check-label" htmlFor={`skill_${index}`}>
-                        {skill}
-                      </label>
-                    </div>
-                  ))}
-                </fieldset>
                 <SubmitField value="Submit" />
                 <ErrorsField />
                 <HiddenField name="owner" />

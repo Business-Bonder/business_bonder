@@ -47,7 +47,7 @@ Student.propTypes = {
     interests: PropTypes.string,
     resume: PropTypes.string,
     school: PropTypes.string,
-    skills: PropTypes.arrayOf(PropTypes.string), // Update prop types to include skills
+    skills: PropTypes.string, // Update prop types to include skills
     owner: PropTypes.string,
     _id: PropTypes.string,
   }).isRequired,

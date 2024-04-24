@@ -25,7 +25,7 @@
     }
   ],
 
-  "defaultStudent": [
+  "defaultStudents": [
     {
       "firstName": "Philip", "lastName": "Johnson", "address": "POST 307, University of Hawaii",
       "image": "https://github.com/philipmjohnson.png",
@@ -33,7 +33,19 @@
       "interests": "I like to teach and code",
       "resume": "https://www.wikipedia.org/",
       "school": "University of Hawaii at Manoa",
-      "owner": "john@foo.com"
+      "owner": "john@foo.com",
+      "skills": ["Skill 1", "Skill 2", "Skill 3"]
+    },
+
+    {
+      "firstName": "Philip", "lastName": "Johnson", "address": "POST 307, University of Hawaii",
+      "image": "https://github.com/philipmjohnson.png",
+      "description": "I am a Professor of Information and Computer Sciences at the University of Hawaii, Director of the Collaborative Software Development Laboratory, and the CEO of OpenPowerQuality.com.",
+      "interests": "I like to teach and code",
+      "resume": "https://www.wikipedia.org/",
+      "school": "University of Hawaii at Manoa",
+      "owner": "jason@foo.com",
+      "skills": ["Skill 1", "Skill 2", "Skill 3"]
     }
   ]
 }

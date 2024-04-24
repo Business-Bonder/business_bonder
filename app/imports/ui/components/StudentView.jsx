@@ -14,8 +14,8 @@ const StudentView = ({ student, notes }) => (
     </Card.Header>
     <Card.Body>
       <ul className="list-group list-group-flush">
-        <li className="list-group-item">{student.description}</li>
-        <li className="list-group-item">{student.interests}</li>
+        <li className="list-group-item">Description - {student.description}</li>
+        <li className="list-group-item">My Interests - {student.interests}</li>
         <li className="list-group-item">
           <a href={student.resume} className="btn btn-primary">My Resume</a>
         </li>
