@@ -5,8 +5,8 @@
 :root {
   --matr-navbar-bg: darkblue;
   --matr-navbar-bg-rgb: 0, 0, 139;
-  --matr-navbar-text-color: white;
-  --matr-navbar-highlight-text: yellow;
+  --matr-navbar-text-color: darkgrey;
+  --matr-navbar-highlight-text: black;
 }
 
 /* Change bootstrap variable values.
@@ -50,5 +50,13 @@ footer, footer a {
 }
 
 .navbar a.nav-link.active {
+  color: var(--matr-navbar-highlight-text);
+}
+
+.navbar-item {
+  font-size: 14px;
+}
+
+.navbar-item:hover {
   color: var(--matr-navbar-highlight-text);
 }
