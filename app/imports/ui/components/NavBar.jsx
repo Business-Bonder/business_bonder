@@ -36,6 +36,11 @@ const NavBar = () => {
                 <div style={{ marginTop: '-5px', marginLeft: '-7px', fontSize: '15px' }}>Home</div>
               </Nav.Link>
             </Col>
+            <Col style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <Nav.Link id="add-contact-nav" as={NavLink} to="/addcompany" key="home">
+                <div style={{ marginTop: '-5px', marginLeft: '-7px', fontSize: '15px' }}>AddCompany</div>
+              </Nav.Link>
+            </Col>
             {currentUser === '' ? (
               <NavDropdown id="login-dropdown" title="Login">
                 <NavDropdown.Item id="login-dropdown-sign-in" as={NavLink} to="/signin">
