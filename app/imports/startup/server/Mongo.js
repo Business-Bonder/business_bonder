@@ -16,14 +16,14 @@ if (Contacts.collection.find().count() === 0) {
   }
 }
 
-const addStudent = (student) => {
-  console.log(`  Adding: ${student.lastName} (${student.owner})`);
-  Companies.collection.insert(student);
+const addCompany = (company) => {
+  console.log(`  Adding: ${company.name} (${company.owner})`);
+  Companies.collection.insert(company);
 };
 
 if (Companies.collection.find().count() === 0) {
-  if (Meteor.settings.defaultStudent) {
+  if (Meteor.settings.defaultCompany) {
     console.log('Creating default student.');
-    Meteor.settings.defaultStudent.forEach(student => addStudent(student));
+    Meteor.settings.defaultCompany.forEach(company => addCompany(company));
   }
 }
