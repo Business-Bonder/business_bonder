@@ -25,6 +25,7 @@ const NavBar = () => {
           <Nav className="me-auto justify-content-start" />
           <Nav className="me-auto">
             {currentUser ? (
+              // eslint-disable-next-line react/jsx-no-useless-fragment
               <>
                 {Roles.userIsInRole(Meteor.userId(), 'admin') && (
                   <>
