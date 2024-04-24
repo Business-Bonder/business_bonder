@@ -14,9 +14,10 @@ import SignIn from '../pages/SignIn';
 import NotAuthorized from '../pages/NotAuthorized';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ListContacts from '../pages/ListContacts';
-import ListContactsAdmin from '../pages/ListContactsAdmin';
+import AdminPage from '../pages/AdminPage';
 import AddContact from '../pages/AddContact';
 import EditContact from '../pages/EditContact';
+import AdminEditPage from '../pages/AdminEditPage';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -39,7 +40,8 @@ const App = () => {
           <Route path="/list" element={<ProtectedRoute><ListContacts /></ProtectedRoute>} />
           <Route path="/add" element={<ProtectedRoute><AddContact /></ProtectedRoute>} />
           <Route path="/edit/:_id" element={<ProtectedRoute><EditContact /></ProtectedRoute>} />
-          <Route path="/admin" element={<AdminProtectedRoute ready={ready}><ListContactsAdmin /></AdminProtectedRoute>} />
+          <Route path="/admin" element={<AdminProtectedRoute ready={ready}><AdminPage /></AdminProtectedRoute>} />
+          <Route path="/adminEdit" element={<AdminProtectedRoute ready={ready}><AdminEditPage /></AdminProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
