@@ -40,3 +40,8 @@ if (Students.collection.find().count() === 0) {
     Meteor.settings.defaultCompany.forEach(company => addCompany(company));
   }
 }
+
+const deleteStudent = (student) => {
+  console.log(`  Deleting: ${student.lastName} (${student.owner})`);
+  Students.collection.deleteOne(student);
+};

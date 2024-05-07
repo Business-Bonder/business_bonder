@@ -15,7 +15,9 @@ const CompanySuggest = ({ company }) => (
       <Card.Text>
         {company.description}
         <p>
-          <Link to={`/edit/${company._id}`}>View Company Profile</Link>
+          <Link to={`/viewcompany/${company._id}`}>View Company Profile</Link>
+        </p>
+        <p>
         </p>
       </Card.Text>
     </Card.Body>
@@ -31,7 +33,6 @@ CompanySuggest.propTypes = {
     description: PropTypes.string,
     interests: PropTypes.string,
     companylink: PropTypes.string,
-    owner: PropTypes.string,
     _id: PropTypes.string,
   }).isRequired,
 };

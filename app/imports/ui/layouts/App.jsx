@@ -18,8 +18,10 @@ import AddStudent from '../pages/AddStudent';
 import EditStudent from '../pages/EditStudent';
 import AddCompany from '../pages/AddCompany';
 import ViewStudentProfile from '../pages/ViewStudentProfile';
+import ViewCompanyProfile from '../pages/ViewCompanyProfile';
 import AdminPage from '../pages/AdminPage';
 import AdminEditPage from '../pages/AdminEditPage';
+import DeleteStudent from '../pages/DeleteStudent';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -42,8 +44,10 @@ const App = () => {
           <Route path="/studenthome" element={<ProtectedRoute><StudentHomePage /></ProtectedRoute>} />
           <Route path="/add" element={<ProtectedRoute><AddStudent /></ProtectedRoute>} />
           <Route path="/viewstudent/:_id" element={<ProtectedRoute><ViewStudentProfile /></ProtectedRoute>} />
+          <Route path="/viewcompany/:_id" element={<ProtectedRoute><ViewCompanyProfile /></ProtectedRoute>} />
+          <Route path="/deletestudent/:_id" element={<ProtectedRoute><DeleteStudent /></ProtectedRoute>} />
           <Route path="/addcompany" element={<ProtectedRoute><AddCompany /></ProtectedRoute>} />
-          <Route path="/edit/:_id" element={<ProtectedRoute><EditStudent /></ProtectedRoute>} />
+          <Route path="/edit/:_id" element={<EditStudent />} />
           <Route path="/admin" element={<AdminProtectedRoute ready={ready}><AdminPage /></AdminProtectedRoute>} />
           <Route path="/adminEdit" element={<AdminProtectedRoute ready={ready}><AdminEditPage /></AdminProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
