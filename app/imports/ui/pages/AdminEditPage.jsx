@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Button, Col, Container, Row, Nav } from 'react-bootstrap';
+import { Button, Col, Container, Row, Nav, Form, FormControl } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
 import { NavLink } from 'react-router-dom';
 import { Contacts } from '../../api/contact/Contacts';
@@ -28,6 +28,15 @@ const AdminEditPage = () => {
                 <Nav.Link as={NavLink} to="/company">Company</Nav.Link>
               </Button>
             </div>
+            <Form className="d-flex align-items-center justify-content-center">
+              <FormControl
+                type="search"
+                placeholder="Search"
+                className="mr-2"
+                aria-label="Search"
+              />
+              <Button variant="success">Search</Button>
+            </Form>
           </Col>
         </Row>
       </Container>

@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { BoxArrowRight, PersonFill, PersonPlusFill } from 'react-bootstrap-icons';
 import { AiFillHome, AiFillBell } from 'react-icons/ai';
-import { Roles } from 'meteor/alanning:roles'; // Import Roles from alanning:roles package
+import { Roles } from 'meteor/alanning:roles';
 
 const NavBar = () => {
   const { currentUser } = useTracker(() => ({
@@ -21,17 +21,12 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            {currentUser ? (
+            {currentUser && Roles.userIsInRole(Meteor.userId(), 'admin') && (
               <>
-                {Roles.userIsInRole(Meteor.userId(), 'admin') && (
-                  <>
-                    <Nav.Link id="list-stuff-admin-nav" as={NavLink} to="/admin">Admin</Nav.Link>
-                    <Nav.Link id="list-stuff-admin-nav" as={NavLink} to="/adminEdit">Admin Edit</Nav.Link>
-                  </>
-                )}
+                <Nav.Link id="list-stuff-admin-nav" as={NavLink} to="/admin">Admin</Nav.Link>
+                <Nav.Link id="list-stuff-admin-nav" as={NavLink} to="/adminEdit">Admin Edit</Nav.Link>
               </>
-            ) : null}
-
+            )}
           </Nav>
           <Nav className="align-items-center">
             <Nav.Link id="add-contact-nav" as={NavLink} to="/home" className="d-flex flex-column align-items-center">
