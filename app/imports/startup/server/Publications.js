@@ -49,7 +49,15 @@ Meteor.publish(Notes.adminPublicationName, function () {
 Meteor.publish(Students.userPublicationName, function () {
   if (this.userId) {
     const username = Meteor.users.findOne(this.userId).username;
-    return Students.collection.find({ owner: username }) && Companies.collection.find();
+    return Students.collection.find({ owner: username });
+  }
+  return this.ready();
+});
+
+Meteor.publish(Students.userPublicationName, function () {
+  if (this.userId) {
+    const username = Meteor.users.findOne(this.userId).username;
+    return Companies.collection.find();
   }
   return this.ready();
 });
@@ -64,7 +72,7 @@ Meteor.publish(Students.adminPublicationName, function () {
 Meteor.publish(Companies.userPublicationName, function () {
   if (this.userId) {
     const username = Meteor.users.findOne(this.userId, 'company').username;
-    return Companies.collection.find({ owner: username });
+    return Companies.collection.find();
   }
   return this.ready();
 });

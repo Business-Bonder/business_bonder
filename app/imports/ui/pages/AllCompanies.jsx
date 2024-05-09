@@ -7,10 +7,11 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import Student from '../components/Student';
 import { Notes } from '../../api/note/Notes';
 import CompanySuggest from '../components/CompanySuggest';
+import StudentSuggest from '../components/StudentSuggest';
 import { Companies } from '../../api/company/Companies';
 
 /* Renders a table containing all of the Contact documents. Use <ContactItem> to render each row. */
-const StudentHomePage = () => {
+const AllCompanies = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
   const { ready, students, notes, companies } = useTracker(() => {
     // Note that this subscription will get cleaned up
@@ -37,20 +38,7 @@ const StudentHomePage = () => {
     <Container className="py-3">
       <Row className="justify-content-center">
         <Col>
-          <Row xs={1} md={1} lg={1} className="g-4">
-            {students.map((student) => (<Col key={student.id}><Student student={student} notes={notes.filter(note => (note.contactId === student._id))} /></Col>))}
-          </Row>
-        </Col>
-        <Col>
           <Stack gap={2}>
-            <Row xs={2} md={2} lg={2} className="justify-content-center">
-              <a href="/allcompanies" className="btn btn-primary">See All Companies</a>
-            </Row>
-            <Row className="justify-content-center">
-              <Col style={{ display: 'flex', justifyContent: 'center' }}>
-                <h2>Recommended For You</h2>
-              </Col>
-            </Row>
             <Row xs={1} md={1} lg={1} className="g-4">
               {companies.map((company) => (
                 <Col key={company.id}>
@@ -69,4 +57,4 @@ const StudentHomePage = () => {
   ) : <LoadingSpinner />);
 };
 
-export default StudentHomePage;
+export default AllCompanies;

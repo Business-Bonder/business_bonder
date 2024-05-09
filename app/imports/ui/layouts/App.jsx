@@ -22,6 +22,8 @@ import ViewCompanyProfile from '../pages/ViewCompanyProfile';
 import AdminPage from '../pages/AdminPage';
 import AdminEditPage from '../pages/AdminEditPage';
 import DeleteStudent from '../pages/DeleteStudent';
+import AllCompanies from '../pages/AllCompanies';
+import Notifications from '../pages/Notifications';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -47,6 +49,8 @@ const App = () => {
           <Route path="/viewcompany/:_id" element={<ProtectedRoute><ViewCompanyProfile /></ProtectedRoute>} />
           <Route path="/deletestudent/:_id" element={<ProtectedRoute><DeleteStudent /></ProtectedRoute>} />
           <Route path="/addcompany" element={<ProtectedRoute><AddCompany /></ProtectedRoute>} />
+          <Route path="/allcompanies" element={<ProtectedRoute><AllCompanies /></ProtectedRoute>} />
+          <Route path="/notifs" element={<ProtectedRoute><Notifications /></ProtectedRoute>} />
           <Route path="/edit/:_id" element={<EditStudent />} />
           <Route path="/admin" element={<AdminProtectedRoute ready={ready}><AdminPage /></AdminProtectedRoute>} />
           <Route path="/adminEdit" element={<AdminProtectedRoute ready={ready}><AdminEditPage /></AdminProtectedRoute>} />

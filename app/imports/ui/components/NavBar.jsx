@@ -39,20 +39,25 @@ const NavBar = () => {
           </Nav>
           <Nav className="justify-content-end">
             <Col style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <Nav.Link id="add-contact-nav" as={NavLink} to="/home" key="home">
-                <div style={{ marginTop: '0px', marginLeft: '0px', paddingRight: '35px' }}><AiFillBell size={25} /></div>
-                <div style={{ marginTop: '-5px', marginLeft: '-30px', fontSize: '15px' }}>Notifications</div>
+              <Nav.Link id="add-contact-nav" as={NavLink} to="/notifs" key="home">
+                <div style={{ marginTop: '0px', marginLeft: '40px', paddingRight: '35px' }}><AiFillBell size={25} /></div>
+                <div style={{ marginTop: '-5px', marginLeft: '10px', fontSize: '15px' }}>Notifications</div>
               </Nav.Link>
             </Col>
             <Col style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <Nav.Link id="add-contact-nav" as={NavLink} to="/studenthome" key="home">
-                <div style={{ marginTop: '0px', marginLeft: '0px' }}><AiFillHome size={25} /></div>
-                <div style={{ marginTop: '-5px', marginLeft: '-7px', fontSize: '15px' }}>Home</div>
+                <div style={{ marginTop: '0px', marginLeft: '-13px' }}><AiFillHome size={25} /></div>
+                <div style={{ marginTop: '-5px', marginLeft: '-20px', fontSize: '15px' }}>Home</div>
+              </Nav.Link>
+            </Col>
+            <Col style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <Nav.Link id="add-contact-nav" as={NavLink} to="/add" key="home">
+                <div style={{ marginTop: '-2px', marginLeft: '-20px', fontSize: '15px' }}>Create Your Profile</div>
               </Nav.Link>
             </Col>
             <Col style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <Nav.Link id="add-contact-nav" as={NavLink} to="/addcompany" key="home">
-                <div style={{ marginTop: '-5px', marginLeft: '-7px', fontSize: '15px' }}>AddCompany</div>
+                <div style={{ marginTop: '-2px', marginLeft: '-20px', fontSize: '15px' }}>Add Your Company</div>
               </Nav.Link>
             </Col>
             {currentUser === '' ? (
